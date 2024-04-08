@@ -1,9 +1,8 @@
 # html parsing / scrapping:
-from bs4 import BeautifulSoup
 # prepare data:
-from Project_Library.preprocessing_data import replace_symbol
+from AVITO.Project_Library.preprocessing_data import replace_symbol
 # convert to datetime:
-from Project_Library.datetime_converter import current_date
+from AVITO.Project_Library.datetime_converter import current_date
 from datetime import date
 
 

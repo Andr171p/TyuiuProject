@@ -7,17 +7,17 @@ from selenium.webdriver.chrome.service import Service
 # fake User-agent:
 from fake_useragent import UserAgent
 # fake proxies:
-from Proxies.proxy import get_proxy
+from AVITO.Proxies.proxy import get_proxy
 # links filter / replace token symbols:
-from Project_Library.preprocessing_data import links_filter
+from AVITO.Project_Library.preprocessing_data import links_filter
 # avito.ru url:
-from AvitoParser.config import AVITO_URL
+from AVITO.AvitoParser.config import AVITO_URL
 # driver time loop:
 import time
 # work with files directory:
 import os
 # avito parsing / scrapping:
-from AvitoParser.avito.critical import get_info, get_price, get_area, get_location, get_datetime, get_url
+from AVITO.AvitoParser.avito.critical import get_info, get_price, get_area, get_location, get_datetime, get_url
 
 
 class PagesLoader:
@@ -48,7 +48,8 @@ class PagesLoader:
         html = self.driver.page_source
         soup = BeautifulSoup(html, "html.parser")
         html_content = soup.find_all("a", attrs={"data-marker": "item-title"})
-        links = [f"https://www.avito.ru{link["href"]}" for link in html_content]
+        #links = [f"https://www.avito.ru{link["href"]}" for link in html_content]git init
+        links = [f"https://www.avito.ru" + link["href"] for link in html_content]
 
         return links
 

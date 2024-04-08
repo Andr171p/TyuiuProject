@@ -1,6 +1,6 @@
 import datetime
 from datetime import date
-from AvitoParser.config import DATES_dict
+from AVITO.AvitoParser.config import DATES_dict
 
 
 # this function return float time from string:

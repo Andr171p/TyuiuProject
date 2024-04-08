@@ -1,4 +1,4 @@
-from AvitoParser.config import TOKEN_WORDS, TOKEN_SYMBOLS
+from AVITO.AvitoParser.config import TOKEN_WORDS, TOKEN_SYMBOLS
 
 
 def links_filter(link):

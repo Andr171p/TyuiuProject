@@ -1,6 +1,6 @@
 import psycopg2
-from DataBase.PostgreSQL.db_auth_data import host, user, password, db_name, port
-from AvitoParser.parser import AvitoParser
+from AVITO.DataBase.PostgreSQL.db_auth_data import host, user, password, db_name, port
+from AVITO.AvitoParser.parser import AvitoParser
 
 
 parser = AvitoParser()

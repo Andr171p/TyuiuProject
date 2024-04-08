@@ -1,5 +1,5 @@
 import random
-from Proxies.auth_data import login, password, ip_list
+from AVITO.Proxies.auth_data import login, password, ip_list
 
 
 def random_ip(_ip_list):
