@@ -36,7 +36,7 @@ class PagesLoader:
         # init current links array:
         self.current_links = []
         # pages number:
-        self.pages_number = 10
+        self.pages_number = 100
 
     # this method push get-request on the url page:
     def get_requests(self, url):
@@ -48,7 +48,7 @@ class PagesLoader:
         html = self.driver.page_source
         soup = BeautifulSoup(html, "html.parser")
         html_content = soup.find_all("a", attrs={"data-marker": "item-title"})
-        #links = [f"https://www.avito.ru{link["href"]}" for link in html_content]git init
+        #links = [f"https://www.avito.ru{link["href"]}" for link in html_content]
         links = [f"https://www.avito.ru" + link["href"] for link in html_content]
 
         return links

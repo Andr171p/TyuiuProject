@@ -1,9 +1,10 @@
 import psycopg2
-from AVITO.DataBase.PostgreSQL.db_auth_data import host, user, password, db_name, port
+from DataBase.PostgreSQL.db_auth_data import host, user, password, db_name, port
 from AVITO.AvitoParser.parser import AvitoParser
+from CIAN.CianParser.parser import CianParser
 
 
-parser = AvitoParser()
+parser = CianParser()
 data_parser = parser.parse_html_file()
 
 connection = psycopg2.connect(
