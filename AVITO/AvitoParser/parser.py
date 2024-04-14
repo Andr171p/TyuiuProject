@@ -48,7 +48,6 @@ class PagesLoader:
         html = self.driver.page_source
         soup = BeautifulSoup(html, "html.parser")
         html_content = soup.find_all("a", attrs={"data-marker": "item-title"})
-        #links = [f"https://www.avito.ru{link["href"]}" for link in html_content]
         links = [f"https://www.avito.ru" + link["href"] for link in html_content]
 
         return links
@@ -75,8 +74,8 @@ class PagesLoader:
             print(f"[ERROR] : {_ex}")
 
     # this method write current links in txt file:
-    def save_url_pages(self, current_links):
-        with open(r"C:\Users\andre\PycharmProjects\Project.Avito.Parser\AvitoParser\url_pages\URL.txt", "w",
+    def save_url_pages(self, current_links, file_name):
+        with open(fr"C:\Users\andre\PycharmProjects\Project.Avito.Parser\AvitoParser\url_pages\{file_name}.txt", "w",
                   encoding="utf-8") as file:
             for link in current_links:
                 file.write(link + "\n")
@@ -89,7 +88,7 @@ class PagesLoader:
                 links = self.parse_links()
                 current_links = self.save_html_pages(links, current_page_count)
                 current_page_count += 1
-                self.save_url_pages(current_links)
+                self.save_url_pages(current_links=current_links, file_name="URL")
         except Exception as _ex:
             print(f"[ERROR] : {_ex}")
         finally:

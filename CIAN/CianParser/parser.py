@@ -1,4 +1,6 @@
 # html content parser:
+import asyncio
+
 from bs4 import BeautifulSoup
 # fake web-driver:
 from seleniumwire import webdriver
@@ -103,12 +105,7 @@ class CianParser:
 
             self.data.append(elements)
 
-        ads = [row for row in self.data if None is not row]
+        ads = [row for row in self.data if None not in row]
 
         return ads
-
-
-parser = CianParser()
-data = parser.parse_html_file()
-print(data)
 
